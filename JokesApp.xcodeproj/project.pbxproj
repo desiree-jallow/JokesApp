@@ -13,6 +13,7 @@
 		D735E1D42536102400A56E52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D735E1D22536102400A56E52 /* Main.storyboard */; };
 		D735E1D62536102600A56E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D735E1D52536102600A56E52 /* Assets.xcassets */; };
 		D735E1D92536102600A56E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D735E1D72536102600A56E52 /* LaunchScreen.storyboard */; };
+		D735E1E52536124000A56E52 /* JokesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D735E1E42536124000A56E52 /* JokesData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D735E1D52536102600A56E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D735E1D82536102600A56E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D735E1DA2536102600A56E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D735E1E42536124000A56E52 /* JokesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		D735E1CB2536102400A56E52 /* JokesApp */ = {
 			isa = PBXGroup;
 			children = (
+				D735E1E32536122500A56E52 /* Controller */,
+				D735E1E22536121B00A56E52 /* View */,
+				D735E1E12536121400A56E52 /* Model */,
 				D735E1CC2536102400A56E52 /* AppDelegate.swift */,
 				D735E1CE2536102400A56E52 /* SceneDelegate.swift */,
-				D735E1D02536102400A56E52 /* ViewController.swift */,
-				D735E1D22536102400A56E52 /* Main.storyboard */,
 				D735E1D52536102600A56E52 /* Assets.xcassets */,
 				D735E1D72536102600A56E52 /* LaunchScreen.storyboard */,
 				D735E1DA2536102600A56E52 /* Info.plist */,
 			);
 			path = JokesApp;
+			sourceTree = "<group>";
+		};
+		D735E1E12536121400A56E52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D735E1E42536124000A56E52 /* JokesData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D735E1E22536121B00A56E52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D735E1D22536102400A56E52 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D735E1E32536122500A56E52 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D735E1D02536102400A56E52 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D735E1E52536124000A56E52 /* JokesData.swift in Sources */,
 				D735E1D12536102400A56E52 /* ViewController.swift in Sources */,
 				D735E1CD2536102400A56E52 /* AppDelegate.swift in Sources */,
 				D735E1CF2536102400A56E52 /* SceneDelegate.swift in Sources */,
