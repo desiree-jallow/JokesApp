@@ -12,9 +12,4 @@ struct Joke: Codable {
     let type: String
     let setup: String
     let punchline: String
-    
-}
-
-struct JokesData: Codable {
-    let jokes: [Joke]
 }

@@ -8,31 +8,32 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let urlString = "https://official-joke-api.appspot.com/jokes/ten"
-    var jokesArray = [Joke]()
-    var i = 0
+    
+    let urlString = "https://official-joke-api.appspot.com/jokes/random"
+    
     
     @IBOutlet weak var jokesLabel: UILabel!
-    
     @IBOutlet weak var punchLineLabel: UILabel!
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var punchLineButton: UIButton!
+    
+    var myJoke: Joke?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         performRequest(with: urlString)
+        resetButton.layer.cornerRadius = 8
+        punchLineButton.layer.cornerRadius = 8
     }
-    
     
     @IBAction func punchlineButtonPressed(_ sender: UIButton) {
-        punchLineLabel.text = jokesArray[i].punchline
-        i = Int.random(in: 0...jokesArray.count - 1)
+        punchLineLabel.text = myJoke?.punchline
         
     }
     
-    @IBAction func ResetButtonPressed(_ sender: UIButton) {
+    @IBAction func resetButtonPressed(_ sender: UIButton) {
         performRequest(with: urlString)
         punchLineLabel.text = ""
-        
-        
     }
     
     func performRequest(with urlString: String) {
@@ -42,20 +43,19 @@ class ViewController: UIViewController {
                     print(e.localizedDescription)
                 }
                     let decoder = JSONDecoder()
+                
                     if let safeData = data {
                         do {
-                            
-                            let jokeData = try decoder.decode([Joke].self, from: safeData)
+                            let jokeData = try decoder.decode(Joke.self, from: safeData)
                             DispatchQueue.main.async { [self] in
-                                jokesArray = jokeData
-                                jokesLabel.text = jokesArray[i].setup
+                                myJoke = jokeData
+                                jokesLabel.text = myJoke?.setup
                             }
                             
                         } catch  {
                             print(error.localizedDescription)
-                        }
-                     
                     }
+                }
             }
             
             task.resume()
@@ -65,4 +65,8 @@ class ViewController: UIViewController {
     }
     
 }
+
+
+
+
 
